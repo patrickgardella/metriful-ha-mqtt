@@ -37,26 +37,17 @@ Create a file named `arduino_secrets.h` in the sketch directory with your creden
 #define SECRET_SSID "YourWiFiSSID"
 #define SECRET_PASS "YourWiFiPassword"
 
+// MQTT broker connection
+#define SECRET_MQTT_BROKER_IP {192, 168, 1, 2}
+#define SECRET_MQTT_USER "your_mqtt_username"
+#define SECRET_MQTT_PASS "your_mqtt_password"
+
 // MQTT topic base path
 #define MQTT_LOCATION "office"
 #define MQTT_BASE_TOPIC "home/" MQTT_LOCATION
 ```
 
-### 2. Configure MQTT Broker
-
-In `sensor_mqtt.ino`, update the MQTT broker IP address (line 150):
-
-```cpp
-IPAddress ipAddr(192, 168, 4, 53);  // Your MQTT broker IP
-```
-
-And the MQTT credentials in the `connect()` function (line 274):
-
-```cpp
-mqtt_client.connect("arduino", "your_username", "your_password")
-```
-
-### 3. User Settings
+### 2. User Settings
 
 Edit these settings in `sensor_mqtt.ino`:
 
@@ -66,7 +57,7 @@ Edit these settings in `sensor_mqtt.ino`:
 | `cycle_period` | `CYCLE_PERIOD_100_S` | Reading interval: `CYCLE_PERIOD_3_S`, `CYCLE_PERIOD_100_S`, or `CYCLE_PERIOD_300_S` |
 | `printDataAsColumns` | `false` | Serial output format |
 
-### 4. Particle Sensor (Optional)
+### 3. Particle Sensor (Optional)
 
 Configure your particle sensor model in the Metriful library's `Metriful_sensor.h`:
 - `PARTICLE_SENSOR_OFF` - No particle sensor
