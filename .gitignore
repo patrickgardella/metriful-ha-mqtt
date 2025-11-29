@@ -1,0 +1,30 @@
+# Build artifacts
+*.elf
+*.hex
+*.bin
+*.eep
+*.lss
+*.map
+*.lst
+*.o
+*.d
+*.su
+build/
+
+# Temporary files and IDE-specific files
+*.ino.hex
+*.ino.elf
+*.ino.eep
+*.tmp
+*.bak
+.vscode/
+.cproject
+.project
+.settings/
+
+# Sensitive data
+credentials.h
+arduino_secrets.h
+
+# Operating system specific files
+.DS_Store
